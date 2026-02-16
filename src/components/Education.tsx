@@ -16,16 +16,7 @@ export function Education() {
         </div>
 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl border border-foreground/5 bg-white p-8 shadow-sm sm:p-10">
-            <div className="absolute top-0 right-4 h-40 w-40 -rotate-45">
-              <Image
-                src="/tree_stanford_emoji.png"
-                alt="Stanford Tree"
-                fill
-                className="object-contain"
-              />
-            </div>
-            
+          <div className="relative rounded-2xl border border-foreground/5 bg-white p-8 shadow-sm sm:p-10">      
             <div className="relative">
               <div className="space-y-10">
                 {educationEntries.map((entry, i) => (
@@ -42,32 +33,32 @@ export function Education() {
                     </div>
 
                     <div className="flex-1 min-w-0 pt-1">
-                      <h1 className="text-1.5xl md:text-2xl font-semibold text-foreground">
+                      <h1 className="text-xl font-semibold text-foreground md:text-2xl">
                         {entry.school}
                       </h1>
 
-                      <p className="mt-0.5 text-sm text-foreground/80">
+                      <p className="mt-0.5 text-base text-foreground/80">
                         {entry.degree}
                       </p>
 
                       {entry.minor && (
-                        <p className="mt-0.5 text-sm text-foreground/80">
+                        <p className="mt-0.5 text-base text-foreground/80">
                           {entry.minor}
                         </p>
                       )}
 
-                      <p className="mt-0.5 text-sm text-foreground/50">
+                      <p className="mt-0.5 text-base text-foreground/60">
                         {entry.years}
                       </p>
 
-                      <p className="mt-2 text-sm text-foreground/70">
+                      <p className="mt-2 text-base text-foreground/70">
                         GPA: {entry.grade}
                       </p>
 
                       {entry.activities && (
                         <>
                           {entry.activities.map((activity, index) => (
-                            <p key={index} className="mt-3 text-sm text-foreground/70">
+                            <p key={index} className="mt-3 text-base text-foreground/70">
                               {activity}
                             </p>
                           ))}
@@ -83,13 +74,13 @@ export function Education() {
 
             <div className="grid gap-10 sm:grid-cols-2">
               <div>
-                <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-foreground/50">
+                <h3 className="mb-5 text-base font-medium uppercase tracking-wider text-foreground/60">
                   Recognition
                 </h3>
                 <ul className="space-y-3">
                   {awards.map((award, i) => (
                     <li key={i}>
-                      <p className="group inline-flex items-center gap-2 text-foreground transition-colors">
+                      <p className="group inline-flex items-center gap-2 text-base font-normal text-foreground transition-colors">
                         <span className="text-primary" style={{ color: 'black' }}>→</span>
                         <span className="animated-underline">{award.title}</span>
                       </p>
@@ -99,7 +90,7 @@ export function Education() {
               </div>
 
               <div>
-                <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-foreground/50">
+                <h3 className="mb-5 text-base font-medium uppercase tracking-wider text-foreground/60">
                   Relevant Coursework
                 </h3>
                 <div className="relative flex flex-wrap gap-x-2 gap-y-2">
@@ -110,7 +101,7 @@ export function Education() {
                       target="_blank"
                       rel="noopener noreferrer"
                       data-cursor-snap
-                      className="course-chip group relative rounded-lg px-3 py-1.5 text-sm font-bold transition-all duration-200"
+                      className="course-chip group relative rounded-lg px-3 py-1.5 text-sm font-medium transition-all duration-200"
                     >
                       {/* Aesthetic tooltip */}
                       <span className="pointer-events-none absolute bottom-full left-1/2 mb-3 -translate-x-1/2 origin-bottom scale-95 opacity-0 transition-all duration-300 ease-out group-hover:scale-100 group-hover:opacity-100 z-[100]">
