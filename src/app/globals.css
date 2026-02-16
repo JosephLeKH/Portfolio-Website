@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+/* ================================
+   Base Layer - CSS Resets
+   ================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    line-height: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+  }
+}
+
+/* ================================
+   CSS Variables for theming
+   ================================ */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 8%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+
+  /* ===========================================
+     BRAND COLOR - Change this to update site-wide
+     Current: Flamingo Pink/Red
+     Stanford Maroon was: 0 74% 33%
+     =========================================== */
+  --primary: 350 80% 55%;
+  --primary-foreground: 60 9.1% 97.8%;
+
+  --secondary: 350 80% 65%;
+  --secondary-foreground: 24 9.8% 10%;
+
+  --muted: 0 10% 95%;
+  --muted-foreground: 25 5.3% 44.7%;
+
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 60 9.1% 97.8%;
+
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 350 80% 55%;
+
+  --radius: 0.5rem;
+}
+
+/* Tailwind v4 theme */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+/* ================================
+   Base Styles
+   ================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================
+   Custom Animations
+   ================================ */
+@keyframes scroll-down {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(16px);
+    opacity: 0.3;
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+/* Text gradient for highlighted sections */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--secondary)) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section divider gradient */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--primary) / 0.3),
+    transparent
+  );
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-top: 0.125rem;
+  display: block;
+  height: 1px;
+  width: 0;
+  transform: translateX(-50%);
+  background-color: white;
+  transition: width 0.2s ease;
+}
+
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   Custom Scrollbar
+   ================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* ================================
+   Course Chip - Cursor Snap Styles
+   ================================ */
+.course-chip {
+  background-color: transparent;
+  transition: background-color 0.2s ease-out;
+}
+
+/* When the custom cursor is actively hovering (via JS attribute) */
+.course-chip[data-cursor-active="true"] {
+  background-color: #22C55E;
+  border-radius: 8px;
+}
+
+.course-chip[data-cursor-active="true"] .course-text {
+  color: white;
+}
