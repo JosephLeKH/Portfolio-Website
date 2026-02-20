@@ -6,6 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const ANIMATION_INITIAL: Record<string, { y?: number; x?: number; scale?: number; opacity: number }> = {
+  'fade-up': { y: 80, opacity: 0 },
+  'fade-left': { x: -80, opacity: 0 },
+  'fade-right': { x: 80, opacity: 0 },
+  scale: { scale: 0.9, opacity: 0 },
+  parallax: { y: 100, opacity: 0 },
+};
+
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
@@ -19,7 +27,7 @@ export default function AnimatedSection({
   className = '',
   animation = 'fade-up',
   delay = 0,
-  duration = 1
+  duration = 1,
 }: AnimatedSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -27,18 +35,8 @@ export default function AnimatedSection({
     const el = sectionRef.current;
     if (!el) return;
 
-    const animations = {
-      'fade-up': { y: 80, opacity: 0 },
-      'fade-left': { x: -80, opacity: 0 },
-      'fade-right': { x: 80, opacity: 0 },
-      scale: { scale: 0.9, opacity: 0 },
-      parallax: { y: 100, opacity: 0 }
-    };
-
-    const initial = animations[animation];
-
+    const initial = ANIMATION_INITIAL[animation] ?? ANIMATION_INITIAL['fade-up'];
     gsap.set(el, initial);
-
     gsap.to(el, {
       y: 0,
       x: 0,
@@ -51,15 +49,13 @@ export default function AnimatedSection({
         trigger: el,
         start: 'top 85%',
         end: 'top 20%',
-        toggleActions: 'play none none reverse'
-      }
+        toggleActions: 'play none none reverse',
+      },
     });
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === el) {
-          trigger.kill();
-        }
+        if (trigger.vars.trigger === el) trigger.kill();
       });
     };
   }, [animation, delay, duration]);

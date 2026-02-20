@@ -18,27 +18,30 @@ export default function ContactPage() {
     setStatus('loading');
     setErrorMessage(null);
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    }).catch(() => null);
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
-        throw new Error(data?.error || 'Failed to send message');
-      }
-
-      setStatus('success');
-      setFormData({ subject: '', email: '', body: '' });
-    } catch (err: any) {
-      console.error(err);
+    if (!res) {
       setStatus('error');
-      setErrorMessage(err.message || 'Something went wrong. Please try again.');
+      setErrorMessage('Something went wrong. Please try again.');
+      return;
     }
+
+    if (!res.ok) {
+      const data = await res.json().catch(() => null);
+      const message = (data && typeof data === 'object' && 'error' in data && typeof data.error === 'string')
+        ? data.error
+        : 'Failed to send message';
+      setStatus('error');
+      setErrorMessage(message);
+      return;
+    }
+
+    setStatus('success');
+    setFormData({ subject: '', email: '', body: '' });
   };
 
   return (

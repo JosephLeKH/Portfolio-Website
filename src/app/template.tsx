@@ -22,22 +22,17 @@ export default function RootTemplate({ children }: PropsWithChildren) {
     setMobile(isMobile());
   }, []);
 
-  // Handle page load animation
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
       window.scrollTo(0, 0);
     }, 800);
-    
     return () => clearTimeout(timer);
   }, []);
 
-  const input = mobile ? 0.9 : 1.2;
-  const height = useTransform(scrollYProgress, [0, input], [50, 0]);
-
-  // Dark mode for contact page
-  const isDarkPage = pathname === '/contact';
-  const bgColor = isDarkPage ? 'bg-foreground' : 'bg-background';
+  const scrollInput = mobile ? 0.9 : 1.2;
+  const height = useTransform(scrollYProgress, [0, scrollInput], [50, 0]);
+  const bgColor = pathname === '/contact' ? 'bg-foreground' : 'bg-background';
 
   return (
     <main className="min-h-screen overflow-x-hidden">

@@ -12,6 +12,13 @@ interface Props {
 // Vibrant green accent - Stanford tree inspired, pairs with flamingo red
 const ACCENT_COLOR = '#22C55E';
 
+function getBgColor(backgroundColor: Props['backgroundColor']) {
+  if (backgroundColor === 'accent') return ACCENT_COLOR;
+  if (backgroundColor === 'primary') return 'hsl(0 74% 33%)';
+  if (backgroundColor === 'secondary') return 'hsl(0 74% 45%)';
+  return backgroundColor ?? ACCENT_COLOR;
+}
+
 export default function RoundedButton({
   children,
   backgroundColor = 'accent',
@@ -19,16 +26,8 @@ export default function RoundedButton({
   as = 'button',
 }: PropsWithChildren<Props>) {
   const [isHovered, setIsHovered] = useState(false);
-
-  // Determine background color for the fill effect
-  const getBgColor = () => {
-    if (backgroundColor === 'accent') return ACCENT_COLOR;
-    if (backgroundColor === 'primary') return 'hsl(0 74% 33%)';
-    if (backgroundColor === 'secondary') return 'hsl(0 74% 45%)';
-    return backgroundColor;
-  };
-
   const Component = as;
+  const fillColor = getBgColor(backgroundColor);
 
   return (
     <Magnetic>
@@ -49,7 +48,7 @@ export default function RoundedButton({
             width: '100%',
             height: isHovered ? '150%' : '0%',
             top: isHovered ? '-25%' : '100%',
-            backgroundColor: getBgColor(),
+            backgroundColor: fillColor,
           }}
         />
       </Component>

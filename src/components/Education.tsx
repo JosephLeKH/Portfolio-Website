@@ -80,8 +80,8 @@ export function Education() {
                 <ul className="space-y-3">
                   {awards.map((award, i) => (
                     <li key={i}>
-                      <p className="group inline-flex items-center gap-2 text-base font-normal text-foreground transition-colors">
-                        <span className="text-primary" style={{ color: 'black' }}>→</span>
+                      <p className="group inline-flex items-center gap-2 text-base font-normal text-foreground">
+                        <span className="text-foreground">→</span>
                         <span className="animated-underline">{award.title}</span>
                       </p>
                     </li>

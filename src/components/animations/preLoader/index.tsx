@@ -8,7 +8,9 @@ export default function PreLoader() {
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    setDimension({ width: window.innerWidth, height: window.innerHeight });
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    setDimension({ width, height });
   }, []);
 
   const curve = getCurveVariants(dimension.width, dimension.height);

@@ -35,10 +35,8 @@ export function Hero() {
             <AnimatedSection animation="fade-up">
               <p className="text-xl font-medium leading-relaxed text-foreground/90 sm:text-2xl">
                 <span className="font-bold text-primary">Software engineer</span>{' '}
-                building end to end systems. I approach engineering through a{' '}
-                <span className="font-bold text-primary">systems</span> lens, interested in
-                both technical foundations and{' '}
-                <span className="font-bold text-primary">real world impact</span>.
+                building thoughtful, reliable <span className="font-bold text-primary">systems</span> from idea to deployment. 
+                I’m drawn to end-to-end ownership and thinking carefully about architecture, data, and how software holds up in the real world.
               </p>
             </AnimatedSection>
 

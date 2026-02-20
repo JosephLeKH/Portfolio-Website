@@ -5,7 +5,37 @@ import Link from 'next/link';
 import { Github } from 'lucide-react';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import { projects } from '@/data/projects';
+import type { Project } from '@/data/projects';
 
+function renderProjectDescription({
+  description,
+  descriptionLinks,
+}: {
+  description: string;
+  descriptionLinks?: Project['descriptionLinks'];
+}) {
+  if (!descriptionLinks?.length) return description;
+  const pattern = descriptionLinks.map((l) => l.text).join('|');
+  const parts = description.split(new RegExp(`(${pattern})`));
+  return parts.map((part, i) => {
+    const link = descriptionLinks?.find((l) => l.text === part);
+    if (link) {
+      return (
+        <a
+          key={i}
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="text-primary hover:underline"
+        >
+          {part}
+        </a>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
 
 export function Projects() {
   return (
@@ -61,25 +91,10 @@ export function Projects() {
                   </div>
 
                   <p className="mt-2 max-w-2xl text-foreground/60 leading-relaxed">
-                    {project.descriptionLinks
-                      ? project.description.split(new RegExp(`(${project.descriptionLinks.map(l => l.text).join('|')})`)).map((part, i) => {
-                          const link = project.descriptionLinks?.find(l => l.text === part);
-                          return link ? (
-                            <a
-                              key={i}
-                              href={link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-primary hover:underline"
-                            >
-                              {part}
-                            </a>
-                          ) : (
-                            <span key={i}>{part}</span>
-                          );
-                        })
-                      : project.description}
+                    {renderProjectDescription({
+                      description: project.description,
+                      descriptionLinks: project.descriptionLinks,
+                    })}
                   </p>
 
                   <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1">

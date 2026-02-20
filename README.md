@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Personal portfolio built with Next.js, featuring projects, experience, education, and a contact form.
+Personal portfolio built with Next.js: projects, experience, education, and a contact form.
 
 **Live site:** [deployment_url.com](https://deployment_url.com)
 
@@ -11,14 +11,14 @@ Personal portfolio built with Next.js, featuring projects, experience, education
 - **Styling:** Tailwind CSS
 - **Animation:** Framer Motion, GSAP, Locomotive Scroll
 - **Icons:** Lucide React
-- **Contact form:** Nodemailer (via API route)
+- **Contact form:** Nodemailer (API route)
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- npm (or yarn/pnpm)
+- npm (or yarn / pnpm)
 
 ### Installation
 
@@ -30,11 +30,15 @@ npm install
 
 ### Environment Variables
 
-Create a `.env.local` file for the contact form:
+Create a `.env.local` file in the project root. Required for the contact form:
 
-```
-# Add your email/nodemailer config as needed
-```
+| Variable           | Description                          |
+|--------------------|--------------------------------------|
+| `SMTP_HOST`        | SMTP server host (e.g. `smtp.gmail.com`) |
+| `SMTP_PORT`        | SMTP port (e.g. `587` or `465`)      |
+| `SMTP_USER`        | SMTP username / sender email        |
+| `SMTP_PASS`        | SMTP password or app password       |
+| `CONTACT_TO_EMAIL` | (Optional) Inbox for form submissions; defaults to `josephle@stanford.edu` |
 
 ### Run Locally
 
@@ -55,10 +59,21 @@ npm start
 
 ```
 src/
-├── app/          # Next.js app router (pages, layouts, API routes)
-├── components/   # React components
-├── data/         # Static data (experience, projects, education)
+├── app/              # Next.js App Router (pages, layout, template, API routes)
+├── components/       # React components (Hero, Experience, Education, Projects, Footer, UI, animations)
+├── data/             # Static content (experience, projects, education)
+├── lib/              # Utilities (e.g. isMobile)
+└── types/            # TypeScript declarations (if any)
 ```
+
+## Scripts
+
+| Command       | Description                |
+|---------------|----------------------------|
+| `npm run dev` | Start development server   |
+| `npm run build` | Build for production    |
+| `npm start`   | Run production build      |
+| `npm run lint`| Run ESLint                |
 
 ## License
 

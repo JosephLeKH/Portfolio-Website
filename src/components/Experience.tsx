@@ -18,10 +18,23 @@ export function Experience() {
   useEffect(() => {
     const line = lineRef.current;
     const items = itemsRef.current;
-
     if (!line || !items.length) return;
 
-    // Animate the timeline line
+    animateTimelineLine({ line, containerRef });
+    items.forEach((item, i) => animateTimelineItem({ item, index: i }));
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  function animateTimelineLine({
+    line,
+    containerRef,
+  }: {
+    line: HTMLDivElement;
+    containerRef: React.RefObject<HTMLDivElement | null>;
+  }) {
     gsap.fromTo(
       line,
       { scaleY: 0, transformOrigin: 'top' },
@@ -36,35 +49,36 @@ export function Experience() {
         },
       }
     );
+  }
 
-    // Animate each timeline item
-    items.forEach((item, i) => {
-      gsap.fromTo(
-        item,
-        {
-          opacity: 0,
-          x: i % 2 === 0 ? -60 : 60,
-          scale: 0.95,
+  function animateTimelineItem({
+    item,
+    index,
+  }: {
+    item: HTMLDivElement;
+    index: number;
+  }) {
+    gsap.fromTo(
+      item,
+      {
+        opacity: 0,
+        x: index % 2 === 0 ? -60 : 60,
+        scale: 0.95,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
-        {
-          opacity: 1,
-          x: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+      }
+    );
+  }
 
   return (
     <section id="experience" className="py-16">

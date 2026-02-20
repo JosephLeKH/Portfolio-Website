@@ -21,12 +21,11 @@ export const journeyData: TimelineItem[] = [
   },
   {
     year: 'Oct 2025 - Present',
-    title: 'Machine Learning Engineer Intern',
+    title: 'Machine Learning Research Intern',
     company: 'Neurotrack',
     companyUrl: 'https://neurotrack.com',
     description:
-      'Developed machine learning models and supporting data pipelines to analyze patient cognitive health data. Partnered closely with ' +
-      'product teams to surface insights through internal dashboards used for patient testing and behavioral analysis.',
+      'Developed and evaluated machine learning models to detect and predict Mild Cognitive Impairment (MCI) and dementia from patient cognitive assessment data. Built supporting data pipelines for preprocessing, feature engineering, and model validation, contributing to ongoing research toward publication.',
     logo: '/logos/neurotrack.jpeg',
   },
   {

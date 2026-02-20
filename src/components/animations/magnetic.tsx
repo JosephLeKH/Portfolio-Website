@@ -10,11 +10,9 @@ export default function Magnetic({ children }: PropsWithChildren) {
     if (!element) return;
 
     const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { height, width, left, top } = element.getBoundingClientRect();
-      const x = clientX - (left + width / 2);
-      const y = clientY - (top + height / 2);
-      
+      const rect = element.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
       element.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
     };
 
@@ -24,7 +22,6 @@ export default function Magnetic({ children }: PropsWithChildren) {
 
     element.addEventListener('mousemove', handleMouseMove);
     element.addEventListener('mouseleave', handleMouseLeave);
-
     return () => {
       element.removeEventListener('mousemove', handleMouseMove);
       element.removeEventListener('mouseleave', handleMouseLeave);

@@ -9,7 +9,8 @@ import RoundedButton from '@/components/animations/roundedButton';
 
 const ACCENT_COLOR = '#22C55E';
 const BRAND_COLOR = 'hsl(350, 80%, 55%)';
-
+const ANIMATED_UNDERLINE_CLASS =
+  "relative after:absolute after:left-1/2 after:mt-0.5 after:block after:h-px after:w-0 after:-translate-x-1/2 after:transform after:bg-white after:duration-200 after:ease-linear after:content-[''] hover:after:w-full";
 
 export function Footer() {
   const [timeNow, setTimeNow] = useState('');
@@ -19,18 +20,12 @@ export function Footer() {
     target: container,
     offset: ['start end', 'end end'],
   });
-  
-  // Parallax effects - footer moves up as you scroll
+
   const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
 
-  const animatedUnderlineStyle =
-    "relative after:absolute after:left-1/2 after:mt-0.5 after:block after:h-px after:w-0 after:-translate-x-1/2 after:transform after:bg-white after:duration-200 after:ease-linear after:content-[''] hover:after:w-full";
-
   useEffect(() => {
-    const updateTime = () => {
-      setTimeNow(new Date().toLocaleTimeString());
-    };
+    const updateTime = () => setTimeNow(new Date().toLocaleTimeString());
     updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
@@ -121,7 +116,7 @@ export function Footer() {
                     href="https://github.com/JosephLeKH"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={animatedUnderlineStyle}
+                    className={ANIMATED_UNDERLINE_CLASS}
                   >
                     Github
                   </Link>
@@ -131,7 +126,7 @@ export function Footer() {
                     href="https://www.linkedin.com/in/hung-le-/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={animatedUnderlineStyle}
+                    className={ANIMATED_UNDERLINE_CLASS}
                   >
                     Linkedin
                   </Link>
