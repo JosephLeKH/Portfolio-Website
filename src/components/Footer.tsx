@@ -81,7 +81,7 @@ export function Footer() {
             josephle@stanford.edu
           </RoundedButton>
           <RoundedButton backgroundColor="accent">
-            <Link href="#">RESUME</Link>
+            <Link href="/resume.pdf" target="_blank">RESUME</Link>
           </RoundedButton>
         </div>
 
