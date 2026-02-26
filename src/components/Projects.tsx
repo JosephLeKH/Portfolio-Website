@@ -61,12 +61,7 @@ export function Projects() {
             animation="fade-up"
             delay={index * 0.05}
           >
-            <Link
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block border-t border-foreground/10 py-8 transition-colors first:border-t-0 hover:bg-foreground/[0.02]"
-            >
+            <div className="group block border-t border-foreground/10 py-8 transition-colors first:border-t-0 hover:bg-foreground/[0.02]">
               <div className="flex items-start gap-6 md:gap-8">
                 <span className={`font-mono text-sm pt-1 ${(project.current) ? 'text-primary' : 'text-foreground/30'}`}>
                   {String(index + 1).padStart(2, '0')}
@@ -80,9 +75,14 @@ export function Projects() {
                         <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
                       </span>
                     )}
-                    <h3 className={`text-xl transition-all group-hover:underline group-hover:underline-offset-4 md:text-2xl ${(project.current || project.live) ? 'font-semibold' : 'font-medium'}`}>
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-xl transition-all hover:underline underline-offset-4 md:text-2xl ${(project.current || project.live) ? 'font-semibold' : 'font-medium'}`}
+                    >
                       {project.title}
-                    </h3>
+                    </Link>
                     {project.current && (
                       <span className="font-mono text-xs text-primary/70">
                         currently building
@@ -106,13 +106,18 @@ export function Projects() {
                         {tag}
                       </span>
                     ))}
-                    <span className="ml-auto text-foreground/20 transition-all group-hover:translate-x-1 group-hover:text-foreground/50">
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-auto text-foreground/20 transition-all hover:translate-x-1 hover:text-foreground/50"
+                    >
                       ↗
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           </AnimatedSection>
         ))}
 

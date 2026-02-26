@@ -42,7 +42,7 @@ export function Footer() {
           <span className="flex items-center">
             <div className="relative h-16 w-16 overflow-hidden rounded-full sm:h-[100px] sm:w-[100px]">
               <Image
-                src="/Hiking_pfp_portfolio.png"
+                src="/my_pfp.png"
                 alt="Joseph Le"
                 fill
                 className="object-cover object-top"

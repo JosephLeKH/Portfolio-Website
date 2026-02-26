@@ -20,6 +20,15 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/apple.png',
   },
   {
+    year: 'Feb 2026 - Present',
+    title: 'Software Engineering Intern',
+    company: 'Vimes',
+    companyUrl: 'https://www.vimes.com',
+    description: 
+      'Full-Stack SWE Intern at Vimes on the Engineering team.',
+    logo: '/logos/vimes.jpeg',
+  },
+  {
     year: 'Oct 2025 - Present',
     title: 'Machine Learning Research Intern',
     company: 'Neurotrack',
@@ -29,7 +38,7 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/neurotrack.jpeg',
   },
   {
-    year: 'Oct 2025 - Present',
+    year: 'Dec 2025 - Present',
     title: 'Software Engineer',
     company: 'Carta (Stanford)',
     companyUrl: 'https://carta-dev-trailblazer.stanford.edu/landing',
@@ -39,7 +48,7 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/carta.jpeg',
   },
   {
-    year: 'Sept 2025 - Present',
+    year: 'Sept 2025 - Feb 2026',
     title: 'CS106A/CS106B Teaching Assistant',
     company: 'Stanford School of Engineering',
     companyUrl: 'https://engineering.stanford.edu/',

@@ -75,6 +75,15 @@ src/
 | `npm start`   | Run production build      |
 | `npm run lint`| Run ESLint                |
 
+## Deploy on Vercel
+
+1. Push this repo to GitHub and [import the project in Vercel](https://vercel.com/new).
+2. Vercel will detect Next.js and use `npm run build` and `npm start` automatically.
+3. In the Vercel project **Settings → Environment Variables**, add:
+   - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` (required for the contact form)
+   - `CONTACT_TO_EMAIL` (optional; fallback is in code)
+4. Redeploy after adding env vars so the contact form works in production.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

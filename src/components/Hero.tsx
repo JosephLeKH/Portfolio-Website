@@ -21,7 +21,7 @@ export function Hero() {
           >
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-3xl">
               <Image
-                src="/Hiking_pfp_portfolio.png"
+                src="/my_pfp.png"
                 alt="Joseph Le"
                 fill
                 className="object-cover object-top"
@@ -34,9 +34,10 @@ export function Hero() {
           <div className="space-y-8 lg:col-span-7">
             <AnimatedSection animation="fade-up">
               <p className="text-xl font-medium leading-relaxed text-foreground/90 sm:text-2xl">
-                <span className="font-bold text-primary">Software engineer</span>{' '}
-                building thoughtful, reliable <span className="font-bold text-primary">systems</span> from idea to deployment. 
-                I’m drawn to end-to-end ownership and thinking carefully about architecture, data, and how software holds up in the real world.
+                <span className="font-bold text-primary">Software engineer</span> building
+                production-grade <span className="font-bold text-primary">systems</span> with
+                end-to-end ownership from architecture and data modeling to deployment.
+                I focus on writing software that is reliable, scalable, and built for the real world.
               </p>
             </AnimatedSection>
 
@@ -46,9 +47,9 @@ export function Hero() {
                   How I Work
                 </h3>
                 <p className="leading-relaxed text-foreground/70">
-                  Turning complex, data heavy problems into reliable software. I enjoy
-                  designing architectures, databases, and pipelines that scale cleanly and
-                  hold up under real constraints.
+                  I turn complex, data-heavy problems into clean, maintainable systems.
+                  I care deeply about architecture, performance, and clarity, designing
+                  tools that scale without sacrificing simplicity.
                 </p>
               </div>
             </AnimatedSection>
@@ -59,18 +60,15 @@ export function Hero() {
                   Beyond Engineering
                 </h3>
                 <p className="leading-relaxed text-foreground/70">
-                  Based in the Bay Area. I'm interested in{' '}
-                  <span className="font-bold text-primary">education</span>,{' '}
-                  <span className="font-bold text-primary">social good</span>, and projects with
-                  real impact. I care about how technology shapes access, opportunity, and
-                  long term outcomes, and I’m drawn to projects where thoughtfulness matters
-                  as much as execution.
+                  Based in the Bay Area, I’m especially interested in
+                  <span className="font-bold text-primary"> education</span> and
+                  <span className="font-bold text-primary"> social impact</span>.
+                  I’m drawn to projects where technical depth meets meaningful, real-world outcomes.
                 </p>
                 <p className="leading-relaxed text-foreground/70">
-                  Outside of work, I enjoy cooking, hiking, camping, listening
-                  to music, and playing basketball. I value
-                  balance, curiosity, and time away from screens, and I try to bring that same
-                  care and perspective into the things I build.
+                  Outside of work, I enjoy cooking, hiking, camping, music, and basketball.
+                  I value balance and curiosity and I try to bring that same care into the
+                  systems I build.
                 </p>
               </div>
             </AnimatedSection>
