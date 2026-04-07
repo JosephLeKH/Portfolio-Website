@@ -24,8 +24,7 @@ export const journeyData: TimelineItem[] = [
     title: 'Software Engineering Intern',
     company: 'Vimes',
     companyUrl: 'https://www.vimes.com',
-    description: 
-      'Full-Stack SWE Intern at Vimes on the Engineering team.',
+    description: 'Built core infrastructure for a cross-agency welfare platform, including a sex offender registry database, native police department integrations for live record access, an AI-powered form completion system with LLM optimization, and a modular notification orchestration system for routing alerts across first responders and public safety teams.',
     logo: '/logos/vimes.jpeg',
   },
   {
@@ -48,7 +47,7 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/carta.jpeg',
   },
   {
-    year: 'Sept 2025 - Feb 2026',
+    year: 'Sept 2025 - Mar 2026',
     title: 'CS106A/CS106B Teaching Assistant',
     company: 'Stanford School of Engineering',
     companyUrl: 'https://engineering.stanford.edu/',
@@ -58,7 +57,7 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/stanford_engineering.jpeg',
   },
   {
-    year: 'Aug 2025 - Feb 2026',
+    year: 'Aug 2025 - Mar 2026',
     title: 'Founding Software Engineer',
     company: 'Bases Insight',
     companyUrl: 'https://www.basesinsight.com',
