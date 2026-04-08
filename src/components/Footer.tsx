@@ -77,8 +77,8 @@ export function Footer() {
         </div>
 
         <div className="mt-6 flex gap-5 sm:mx-[100px]">
-          <RoundedButton backgroundColor="accent">
-            josephle@stanford.edu
+          <RoundedButton backgroundColor="accent" as="div">
+            <a href="mailto:josephle@stanford.edu">josephle@stanford.edu</a>
           </RoundedButton>
           <RoundedButton backgroundColor="accent">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>

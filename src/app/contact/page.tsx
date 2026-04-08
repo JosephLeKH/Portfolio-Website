@@ -73,12 +73,12 @@ export default function ContactPage() {
             </Link>
           </div>
           <div className="flex justify-between uppercase">
-            <Link
-              href="mailto:jle@stanford.edu"
+            <a
+              href="mailto:josephle@stanford.edu"
               className="transition-colors hover:text-primary"
             >
               <p className="m-0">→Email</p>
-            </Link>
+            </a>
             <Link
               href="https://github.com/JosephLeKH"
               target="_blank"
