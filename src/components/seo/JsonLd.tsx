@@ -1,8 +1,10 @@
+import { safeJsonLdStringify } from '@/lib/jsonld';
 import { getSiteUrl } from '@/lib/site';
 
 const GITHUB = 'https://github.com/JosephLeKH';
 const LINKEDIN = 'https://www.linkedin.com/in/hung-le-/';
 
+/** Person + WebSite on every page (entity + site). */
 export function JsonLd() {
   const url = getSiteUrl();
   const description =
@@ -18,6 +20,7 @@ export function JsonLd() {
         url,
         jobTitle: 'Software Engineer',
         description,
+        image: `${url}/my_pfp.png`,
         sameAs: [GITHUB, LINKEDIN],
         alumniOf: {
           '@type': 'CollegeOrUniversity',
@@ -36,11 +39,9 @@ export function JsonLd() {
     ],
   };
 
-  const json = JSON.stringify(graph).replace(/</g, '\\u003c');
-
   return (
     <script type="application/ld+json" suppressHydrationWarning>
-      {json}
+      {safeJsonLdStringify(graph)}
     </script>
   );
 }

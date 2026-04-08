@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { Education } from '@/components/Education';
 import { Experience } from '@/components/Experience';
 import { Projects } from '@/components/Projects';
+import { HomeProfilePageJsonLd } from '@/components/seo/HomeProfilePageJsonLd';
 
 export const metadata: Metadata = {
   alternates: {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <HomeProfilePageJsonLd />
       <Hero />
       <Education />
       <Experience />
