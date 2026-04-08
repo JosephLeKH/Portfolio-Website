@@ -10,8 +10,11 @@ export function Hero() {
     <section id="about">
 
       <div className="mt-36 px-8">
-        <div className="pb-12">
-          <h1 className="text-3xl font-medium lg:text-[10rem] lg:leading-none">About Me</h1>
+        <div className="space-y-3 pb-12">
+          <h1 className="text-3xl font-medium lg:text-[10rem] lg:leading-none">Joseph Le</h1>
+          <p className="text-lg text-foreground/75 lg:text-3xl lg:font-medium">
+            Software engineer · Stanford CS
+          </p>
         </div>
 
         <div className="mx-auto w-[85%]">
