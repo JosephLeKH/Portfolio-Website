@@ -14,6 +14,7 @@ export function Hero() {
           <h1 className="text-3xl font-medium lg:text-[10rem] lg:leading-none">About Me</h1>
         </div>
 
+        <div className="mx-auto w-[85%]">
         <section className="grid gap-8 md:gap-12 lg:grid-cols-12 lg:gap-16">
           <AnimatedSection
             animation="fade-right"
@@ -74,6 +75,7 @@ export function Hero() {
             </AnimatedSection>
           </div>
         </section>
+        </div>
       </div>
     </section>
   );

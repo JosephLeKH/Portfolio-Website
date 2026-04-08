@@ -7,6 +7,8 @@ interface Props {
   backgroundColor?: string;
   className?: string;
   as?: 'button' | 'div';
+  onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
 // Vibrant green accent - Stanford tree inspired, pairs with flamingo red
@@ -24,6 +26,8 @@ export default function RoundedButton({
   backgroundColor = 'accent',
   className = '',
   as = 'button',
+  onClick,
+  style,
 }: PropsWithChildren<Props>) {
   const [isHovered, setIsHovered] = useState(false);
   const Component = as;
@@ -33,9 +37,11 @@ export default function RoundedButton({
     <Magnetic>
       <Component
         className={`relative flex cursor-pointer items-center justify-center overflow-hidden rounded-full px-6 py-4 font-bold text-white transition-colors ${className}`}
-        style={{ 
+        style={{
           border: `2px solid ${ACCENT_COLOR}`,
+          ...style,
         }}
+        onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

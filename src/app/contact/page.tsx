@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -11,8 +11,6 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const background = useRef<HTMLDivElement>(null);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
@@ -88,10 +86,6 @@ export default function ContactPage() {
               <p>→Github</p>
             </Link>
           </div>
-          <div
-            ref={background}
-            className="pointer-events-none absolute inset-0 h-full w-full bg-foreground text-[5.6vw] opacity-0"
-          />
         </div>
       </div>
 

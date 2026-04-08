@@ -14,6 +14,13 @@ const ANIMATED_UNDERLINE_CLASS =
 
 export function Footer() {
   const [timeNow, setTimeNow] = useState('');
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    await navigator.clipboard.writeText('josephle@stanford.edu');
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
+  };
   const [isGetInTouchHovered, setIsGetInTouchHovered] = useState(false);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -77,9 +84,13 @@ export function Footer() {
         </div>
 
         <div className="mt-6 flex gap-5 sm:mx-[100px]">
-          <RoundedButton backgroundColor="accent" as="div">
-            <a href="mailto:josephle@stanford.edu">josephle@stanford.edu</a>
-          </RoundedButton>
+          <div className="flex items-center gap-2">
+            <RoundedButton backgroundColor="accent" as="div">
+              <a href="mailto:josephle@stanford.edu" onClick={handleCopyEmail}>
+                josephle@stanford.edu
+              </a>
+            </RoundedButton>
+          </div>
           <RoundedButton backgroundColor="accent">
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
           </RoundedButton>

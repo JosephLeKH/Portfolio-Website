@@ -16,7 +16,7 @@ export const projects: Project[] = [
     description:
       'Building core infrastructure for a cross-agency welfare and crisis-intervention platform that unifies data and workflows between child protection services, law enforcement, and community partners.',
     link: 'https://www.vimes.com',
-    tags: [],
+    tags: ['React', 'TypeScript', 'FastAPI', 'DynamoDB', 'OpenSearch', 'GetStream', 'Other AWS'],
     current: true,
   },
   {
