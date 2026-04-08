@@ -20,8 +20,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const { subject, email, body: messageBody } = body;
-  if (!subject || !email || !messageBody) {
+  const { name, email, body: messageBody } = body;
+  if (!name || !email || !messageBody) {
     return NextResponse.json(
       { error: 'Missing required fields' },
       { status: 400 }
@@ -36,12 +36,13 @@ export async function POST(req: NextRequest) {
       from: `"Portfolio Contact" <${process.env.SMTP_USER}>`,
       to,
       replyTo: email,
-      subject,
-      text: `${messageBody}\n\nFrom: ${email}`,
+      subject: `New message from ${name}`,
+      text: `${messageBody}\n\nFrom: ${name} <${email}>`,
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error('Failed to send contact email:', err);
     return NextResponse.json(
       { error: 'Failed to send message' },
       { status: 500 }

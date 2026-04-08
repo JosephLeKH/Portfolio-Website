@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    subject: '',
+    name: '',
     email: '',
     body: '',
   });
@@ -41,7 +41,8 @@ export default function ContactPage() {
     }
 
     setStatus('success');
-    setFormData({ subject: '', email: '', body: '' });
+    setFormData({ name: '', email: '', body: '' });
+    setTimeout(() => setStatus('idle'), 5000);
   };
 
   return (
@@ -109,16 +110,16 @@ export default function ContactPage() {
           <div className="col-span-2">
             <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
               <div className="flex flex-col space-y-1">
-                <label htmlFor="subject" className="text-xl">
-                  Subject
+                <label htmlFor="name" className="text-xl">
+                  Name
                 </label>
                 <input
-                  id="subject"
+                  id="name"
                   type="text"
                   placeholder="Full name"
-                  value={formData.subject}
+                  value={formData.name}
                   onChange={(e) =>
-                    setFormData({ ...formData, subject: e.target.value })
+                    setFormData({ ...formData, name: e.target.value })
                   }
                   className="w-full rounded-xl border border-white/20 bg-background px-4 py-3 text-foreground transition-colors focus:border-primary focus:outline-none"
                   required

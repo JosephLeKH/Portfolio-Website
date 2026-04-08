@@ -24,7 +24,7 @@ export const journeyData: TimelineItem[] = [
     title: 'Software Engineering Intern',
     company: 'Vimes',
     companyUrl: 'https://www.vimes.com',
-    description: 'Built core infrastructure for a cross-agency welfare platform, including a sex offender registry database, native police department integrations for live record access, an AI-powered form completion system with LLM optimization, and a modular notification orchestration system for routing alerts across first responders and public safety teams.',
+    description: 'Built core infrastructure for a cross-agency welfare platform, including an optimized registry database, native law enforcement system integrations, an AI-powered form completion system with LLM optimization, and a modular notification orchestration system for routing alerts across response teams.',
     logo: '/logos/vimes.jpeg',
   },
   {
