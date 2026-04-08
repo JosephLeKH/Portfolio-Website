@@ -1,20 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-
-function getTransporter() {
-  const port = Number(process.env.SMTP_PORT) || 587;
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port,
-    secure: port === 465,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-}
+import { Resend } from 'resend';
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const body = await req.json().catch(() => null);
   if (!body) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
@@ -29,16 +17,20 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const transporter = getTransporter();
     const to = process.env.CONTACT_TO_EMAIL ?? 'josephle@stanford.edu';
 
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.SMTP_USER}>`,
+    const { error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
       to,
       replyTo: email,
       subject: `New message from ${name}`,
       text: `${messageBody}\n\nFrom: ${name} <${email}>`,
     });
+
+    if (error) {
+      console.error('Resend error:', error);
+      return NextResponse.json({ error: 'Failed to send message' }, { status: 500 });
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
@@ -49,4 +41,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
