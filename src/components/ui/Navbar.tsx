@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function Navbar() {
@@ -16,17 +17,21 @@ export function Navbar() {
 
   return (
     <>
-      <header className="absolute top-0 z-20 box-border flex w-full items-center p-4 font-light text-white mix-blend-difference lg:p-8">
+      <header className="absolute top-0 z-20 box-border flex w-full items-center p-4 font-light text-foreground lg:p-8">
         <div className="flex lg:pr-56">
-          <Link href="/" className="group z-10 flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded bg-white text-sm font-bold text-black">
-              J
-            </div>
+          <Link href="/" className="group z-10 flex items-center space-x-2" aria-label="Joseph Le home">
+            <Image
+              src="/site-mark.svg"
+              alt=""
+              width={32}
+              height={32}
+              className="block h-8 w-8 shrink-0"
+              priority
+              unoptimized
+            />
             {!isMobile && (
-              <>
-                <div className="transition-transform duration-300 hover:rotate-[360deg]">
-                  ©
-                </div>
+              <div className="flex items-center space-x-2">
+                <div className="transition-transform duration-300 hover:rotate-[360deg]">©</div>
                 <div className="relative flex overflow-hidden">
                   <div className="transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:translate-x-[-100%]">
                     crafted by
@@ -38,7 +43,7 @@ export function Navbar() {
                     Le
                   </div>
                 </div>
-              </>
+              </div>
             )}
           </Link>
         </div>

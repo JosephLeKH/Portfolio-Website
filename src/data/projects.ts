@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: 'Portfolio Website (this site!)',
     description:
       'Personal portfolio designed and built to showcase projects, experience, and writing with a focus on clarity, performance, and thoughtful design. Serves as a living system that evolves alongside my work.',
-    link: 'https://josephle-le.vercel.app',
+    link: 'https://josephle.dev',
     tags: ['Next.js', 'React', 'TypeScript', 'GSAP'],
     current: true,
   },

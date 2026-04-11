@@ -13,7 +13,7 @@ export function Hero() {
         <div className="space-y-3 pb-12">
           <h1 className="text-3xl font-medium lg:text-[10rem] lg:leading-none">Joseph Le</h1>
           <p className="text-lg text-foreground/75 lg:text-3xl lg:font-medium">
-            Software engineer · Stanford CS
+            Software Engineer · Stanford CS
           </p>
         </div>
 

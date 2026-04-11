@@ -2,7 +2,7 @@
 
 Personal portfolio built with Next.js: projects, experience, education, and a contact form.
 
-**Live site:** [https://josephle-le.vercel.app](https://josephle-le.vercel.app)
+**Live site:** [https://josephle.dev](https://josephle.dev)
 
 ## Tech Stack
 

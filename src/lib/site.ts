@@ -1,4 +1,4 @@
-const FALLBACK_SITE = 'https://josephle-le.vercel.app';
+const FALLBACK_SITE = 'https://josephle.dev';
 
 function normalizeOrigin(raw: string): string | null {
   const trimmed = raw.replace(/\/$/, '');
@@ -13,7 +13,7 @@ function normalizeOrigin(raw: string): string | null {
 
 /**
  * Canonical site origin for metadata, sitemap, and JSON-LD.
- * Set NEXT_PUBLIC_SITE_URL in production (e.g. https://yourdomain.com).
+ * Set NEXT_PUBLIC_SITE_URL in production (e.g. https://josephle.dev).
  */
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();

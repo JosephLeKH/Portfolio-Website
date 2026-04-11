@@ -17,6 +17,10 @@ const defaultDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: [{ url: '/site-mark.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/site-mark.svg', type: 'image/svg+xml' }],
+  },
   title: {
     default: defaultTitle,
     template: '%s | Joseph Le',
