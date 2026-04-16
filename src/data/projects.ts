@@ -69,7 +69,7 @@ export const projects: Project[] = [
     title: 'Wildfire Insurance Analysis',
     description:
       'Data-driven analysis of California wildfires and their impact on home insurance markets, examining non-renewals and reliance on the FAIR Plan. Explores how fire severity and risk shape long-term insurance outcomes.',
-    link: 'https://github.com/josephle/wildfire-insurance',
+    link: 'https://github.com/JosephLeKH/wildfire_insurance_analysis',
     tags: ['Python', 'Pandas', 'SQL', 'Matplotlib'],
   },
 ];
