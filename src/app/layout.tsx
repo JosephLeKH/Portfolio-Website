@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] });
 const siteUrl = getSiteUrl();
 const defaultTitle = 'Joseph Le | Software Engineer & Stanford CS';
 const defaultDescription =
-  'Joseph Le is a software engineer and Stanford CS student building production systems—architecture, data modeling, and deployment. Bay Area; education & social impact.';
+  'Stanford CS student and software engineer. Building real systems at Carta and Apple, with a focus on full-stack development, ML, and social impact.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -23,9 +23,9 @@ export function Navbar() {
             <Image
               src="/site-mark.svg"
               alt=""
-              width={32}
-              height={32}
-              className="block h-8 w-8 shrink-0"
+              width={80}
+              height={40}
+              className="block h-8 w-auto shrink-0"
               priority
               unoptimized
             />
