@@ -10,12 +10,12 @@ export interface TimelineItem {
 
 export const journeyData: TimelineItem[] = [
   {
-    year: 'Incoming',
+    year: 'Jun 2026 - Present',
     title: 'Software Engineering Intern',
     company: 'Apple',
     companyUrl: 'https://apple.com',
-    description: 
-      'Incoming Full-Stack SWE Intern at Apple on the Internal Tools team.',
+    description:
+      'SWE Planning & Infrastructure Team. Building a scalable internal tool to support the SWE organization.',
     highlight: true,
     logo: '/logos/apple.png',
   },
@@ -28,15 +28,6 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/vimes.jpeg',
   },
   {
-    year: 'Oct 2025 - Present',
-    title: 'Machine Learning Research Intern',
-    company: 'Neurotrack',
-    companyUrl: 'https://neurotrack.com',
-    description:
-      'Developed and evaluated machine learning models to detect and predict Mild Cognitive Impairment (MCI) and dementia from patient cognitive assessment data. Built supporting data pipelines for preprocessing, feature engineering, and model validation, contributing to ongoing research toward publication.',
-    logo: '/logos/neurotrack.jpeg',
-  },
-  {
     year: 'Dec 2025 - Present',
     title: 'Software Engineer',
     company: 'Carta (Stanford)',
@@ -45,6 +36,15 @@ export const journeyData: TimelineItem[] = [
       'Developed core planning features for Stanford’s four-year course planner, building interactive workflows for scheduling and course ' +
       'organization. Worked closely with design and product teams to improve planner reliability, usability, and overall student experience.',
     logo: '/logos/carta.jpeg',
+  },
+  {
+    year: 'Oct 2025 - Jun 2026',
+    title: 'Machine Learning Research Intern',
+    company: 'Neurotrack',
+    companyUrl: 'https://neurotrack.com',
+    description:
+      'Developed and evaluated machine learning models to detect and predict Mild Cognitive Impairment (MCI) and dementia from patient cognitive assessment data. Built supporting data pipelines for preprocessing, feature engineering, and model validation, contributing to ongoing research toward publication.',
+    logo: '/logos/neurotrack.jpeg',
   },
   {
     year: 'Sept 2025 - Mar 2026',
