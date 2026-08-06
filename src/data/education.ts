@@ -3,7 +3,7 @@ export const educationEntries = [
     school: 'Stanford University',
     degree: 'Bachelor of Science - BS, Computer Science (Systems and AI Track)',
     minor: null,
-    years: 'Expected June 2027',
+    years: 'Expected June 2028',
     grade: '3.95',
     activities: ['Teaching Assistant for CS 106B', 
         'Software Engineer at Stanford Carta Lab',

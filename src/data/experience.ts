@@ -15,16 +15,17 @@ export const journeyData: TimelineItem[] = [
     company: 'Apple',
     companyUrl: 'https://apple.com',
     description:
-      'SWE Planning & Infrastructure Team. Building a scalable internal tool to support the SWE organization.',
+      'SWE Planning & Infrastructure Team. Sole engineer on a native SwiftUI internal tool, owned end to end from design through delivery to senior leadership. Worked across scoping, design, and implementation for an org-wide user base.',
     highlight: true,
     logo: '/logos/apple.png',
   },
   {
     year: 'Feb 2026 - Present',
-    title: 'Software Engineering Intern',
+    title: 'Member of Technical Staff',
     company: 'Vimes',
     companyUrl: 'https://www.vimes.com',
-    description: 'Built core infrastructure for a cross-agency welfare platform, including an optimized registry database, native law enforcement system integrations, an AI-powered form completion system with LLM optimization, and a modular notification orchestration system for routing alerts across response teams.',
+    description:
+      'Own backend and infrastructure for a cross-agency case management platform on AWS GovCloud. Built native law enforcement integrations, cross-agency permissioning, referral routing, and the admin portal, plus an LLM-backed form completion system.',
     logo: '/logos/vimes.jpeg',
   },
   {
@@ -43,11 +44,12 @@ export const journeyData: TimelineItem[] = [
     company: 'Neurotrack',
     companyUrl: 'https://neurotrack.com',
     description:
-      'Developed and evaluated machine learning models to detect and predict Mild Cognitive Impairment (MCI) and dementia from patient cognitive assessment data. Built supporting data pipelines for preprocessing, feature engineering, and model validation, contributing to ongoing research toward publication.',
+      'Developed and evaluated machine learning models to detect and predict Mild Cognitive Impairment (MCI) and dementia from patient cognitive ' +
+      'assessment data. Built supporting data pipelines for preprocessing, feature engineering, and model validation across clinical research experimentation.',
     logo: '/logos/neurotrack.jpeg',
   },
   {
-    year: 'Sept 2025 - Mar 2026',
+    year: 'Sep 2025 - Mar 2026',
     title: 'CS106A/CS106B Teaching Assistant',
     company: 'Stanford School of Engineering',
     companyUrl: 'https://engineering.stanford.edu/',
@@ -58,7 +60,7 @@ export const journeyData: TimelineItem[] = [
   },
   {
     year: 'Aug 2025 - Mar 2026',
-    title: 'Founding Software Engineer',
+    title: 'Founding Engineer',
     company: 'Bases Insight',
     companyUrl: 'https://www.basesinsight.com',
     description:
@@ -67,7 +69,7 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/bases_insight.png',
   },
   {
-    year: 'May 2025 - Oct 2025',
+    year: 'Jun 2025 - Oct 2025',
     title: 'Software Engineering Intern',
     company: 'Jersey Mike’s Franchise',
     companyUrl: 'https://www.jerseymikes.com',
@@ -77,13 +79,13 @@ export const journeyData: TimelineItem[] = [
     logo: '/logos/jersey_mikes.png',
   },
   {
-    year: 'June 2025 - Aug 2025',
+    year: 'Jun 2025 - Aug 2025',
     title: 'Data Science Intern',
     company: 'Bonterra Tech',
     companyUrl: 'https://www.bonterratech.com/',
     description:
       'Developed predictive models and data pipelines to analyze donor behavior at scale, improving classification performance and supporting retention analysis. ' +
-      'Built causal inference workflows to estimate treatment effects and inform data-driven decision making across large datasets. ',
+      'Built causal inference workflows to estimate treatment effects and inform data-driven decision making across large datasets.',
     logo: '/logos/bonterra_tech.jpeg',
   },
   {
@@ -93,7 +95,7 @@ export const journeyData: TimelineItem[] = [
     companyUrl: 'https://dams.su.domains/',
     description:
       'Integrated external datasets to support predictive modeling of maintenance needs in remote deployments for nonprofit partners. Designed and built a modern ' +
-      'dashboard to replace a legacy system and improve visibility into operational performance and trends. ',
+      'dashboard to replace a legacy system and improve visibility into operational performance and trends.',
     logo: '/logos/dams.jpeg',
   },
   {
@@ -103,7 +105,7 @@ export const journeyData: TimelineItem[] = [
     companyUrl: 'https://aigolearning.org/',
     description:
       'Built and maintained full-stack web applications and internal tools supporting user workflows, authentication, and role-based access control. Developed ' +
-      'backend services and automation systems that improved platform engagement and increased project submissions. ',
+      'backend services and automation systems that improved platform engagement and increased project submissions.',
     logo: '/logos/aigo_learning.jpeg',
   },
   {
@@ -113,7 +115,7 @@ export const journeyData: TimelineItem[] = [
     companyUrl: 'https://thinkland.ai/',
     description:
       'Designed and taught computer science lessons centered on real-world projects, improving student comprehension and engagement. Mentored students in ' +
-      'programming fundamentals and advanced concepts, fostering critical thinking and guiding them through successful project completion. ',
+      'programming fundamentals and advanced concepts, fostering critical thinking and guiding them through successful project completion.',
     logo: '/logos/thinkland_ai.jpeg',
   },
 ];
