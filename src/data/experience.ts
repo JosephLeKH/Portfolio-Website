@@ -11,7 +11,7 @@ export interface TimelineItem {
 export const journeyData: TimelineItem[] = [
   {
     year: 'Incoming Summer 2027',
-    title: 'SWE Intern',
+    title: 'Software Engineering Intern',
     company: 'Citadel',
     companyUrl: 'https://www.citadel.com',
     description: 'Commodities Engineering',
