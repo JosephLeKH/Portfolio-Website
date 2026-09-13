@@ -10,14 +10,13 @@ export interface TimelineItem {
 
 export const journeyData: TimelineItem[] = [
   {
-    year: 'Jun 2026 - Present',
-    title: 'Software Engineering Intern',
-    company: 'Apple',
-    companyUrl: 'https://apple.com',
-    description:
-      'SWE Planning & Infrastructure Team. Sole engineer on a native SwiftUI internal tool, owned end to end from design through delivery to senior leadership. Worked across scoping, design, and implementation for an org-wide user base.',
+    year: 'Incoming Summer 2027',
+    title: 'SWE Intern',
+    company: 'Citadel',
+    companyUrl: 'https://www.citadel.com',
+    description: 'Commodities Engineering',
     highlight: true,
-    logo: '/logos/apple.png',
+    logo: '/logos/citadel.png',
   },
   {
     year: 'Feb 2026 - Present',
@@ -25,17 +24,25 @@ export const journeyData: TimelineItem[] = [
     company: 'Vimes',
     companyUrl: 'https://www.vimes.com',
     description:
-      'Own backend and infrastructure for a cross-agency case management platform on AWS GovCloud. Built native law enforcement integrations, cross-agency permissioning, referral routing, and the admin portal, plus an LLM-backed form completion system.',
+      'Built a repeatable data-ingestion pipeline (AWS ECS Fargate, RDS) unifying records from multiple independent agency systems into one searchable store with a common document model. Re-architected the platform’s authorization layer into a cache-backed model with atomic writes and automated migration tooling, and engineered an AI-powered form-completion backend using context-aware LLM prompting.',
     logo: '/logos/vimes.jpeg',
   },
   {
-    year: 'Dec 2025 - Present',
+    year: 'Jun 2026 - Sep 2026',
+    title: 'Software Engineering Intern',
+    company: 'Apple',
+    companyUrl: 'https://apple.com',
+    description:
+      'Built a Swift iOS application for Apple’s internal engineering Expo, implementing interactive venue mapping, personalized calendar management, real-time push notifications, and AI-powered session recommendations for a large-scale internal audience.',
+    logo: '/logos/apple.png',
+  },
+  {
+    year: 'Dec 2025 - Jun 2026',
     title: 'Software Engineer',
     company: 'Carta (Stanford)',
     companyUrl: 'https://carta-dev-trailblazer.stanford.edu/landing',
     description:
-      'Developed core planning features for Stanford’s four-year course planner, building interactive workflows for scheduling and course ' +
-      'organization. Worked closely with design and product teams to improve planner reliability, usability, and overall student experience.',
+      'Built core planning features for Stanford’s four-year course planner, implementing interactive scheduling workflows, prerequisite and unit constraint validation, and robust client-server state synchronization across complex multi-quarter plans. Identified and resolved 20+ frontend state and edge-case bugs, improving UI consistency and reducing student-reported planning errors in a high-traffic production environment.',
     logo: '/logos/carta.jpeg',
   },
   {
