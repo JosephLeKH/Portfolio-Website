@@ -33,7 +33,7 @@ export const journeyData: TimelineItem[] = [
     company: 'Apple',
     companyUrl: 'https://apple.com',
     description:
-      'Built a Swift iOS application for Apple’s internal engineering Expo, implementing interactive venue mapping, personalized calendar management, real-time push notifications, and AI-powered session recommendations for a large-scale internal audience.',
+      'Built a Swift iOS application for Apple’s internal engineering Expo, implemented interactive venue mapping, personalized calendar management, real-time push notifications, and AI-powered session recommendations for a large-scale internal audience.',
     logo: '/logos/apple.png',
   },
   {
